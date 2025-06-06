@@ -1,5 +1,6 @@
 .appContainer {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* чтобы футер прижался вниз */
+  height: 100vh;
+  background-color: var(--tg-theme-bg-color);
 }

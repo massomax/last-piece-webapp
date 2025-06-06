@@ -1,7 +1,7 @@
 // src/components/Footer.tsx
 import React from "react";
 import styles from "./Footer.module.css";
-import HomeIcon from "../assets/home.svg"; // Предположим, что вы положили иконки в src/assets
+import HomeIcon from "../assets/home.svg";
 import FavoritesIcon from "../assets/heart.svg";
 
 const Footer: React.FC = () => {

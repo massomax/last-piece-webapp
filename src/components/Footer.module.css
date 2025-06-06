@@ -1,12 +1,20 @@
 /* src/components/Footer.module.css */
 
-/* Фон и обёртка футера */
+/* 
+  Футер прижат к низу, потому что App:
+  display: flex; flex-direction: column; height: 100vh;
+  ProductGrid растягивается (flex:1), а Footer остаётся внизу 
+*/
 .footerContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 8px 0;
+
+  /* Фон вторичного уровня (подстроится под тему) */
   background-color: var(--tg-theme-secondary-bg-color);
+
+  /* Горизонтальная граница сверху (чтобы отделить от контента) */
   border-top: 1px solid var(--tg-theme-bg-color);
 }
 
@@ -17,8 +25,12 @@
   padding: 4px;
   cursor: pointer;
   transition: transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Анимация при нажатии */
 .iconButton:active {
   transform: scale(0.9);
 }
@@ -27,5 +39,8 @@
 .icon {
   width: 24px;
   height: 24px;
-  fill: var(--tg-theme-hint-color);
+
+  /* Цвет иконки через currentColor */
+  color: var(--tg-theme-hint-color);
+  fill: currentColor;
 }

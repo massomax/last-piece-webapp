@@ -1,6 +1,6 @@
 /* src/components/ProductCard.module.css */
 
-/* Общая карточка */
+/* Корневая карточка */
 .card {
   display: flex;
   flex-direction: column;
@@ -17,15 +17,20 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Обёртка для картинки, чтобы задать фиксированную высоту */
+/* Обёртка для изображения, соотношение сторон 4:3 */
 .imageWrapper {
   width: 100%;
-  padding-top: 75%; /* соотношение сторон 4:3; можно изменить */
+
+  /* 
+    4:3 соотношение: 
+    высота = ширина * (3/4) = 75% от ширины 
+  */
+  padding-top: 75%;
   position: relative;
-  background-color: #f0f0f0; /* placeholder фон */
+  background-color: #f0f0f0;
 }
 
-/* Сама картинка внутри обёртки */
+/* Сама картинка, растягиваем во всю обёртку */
 .image {
   position: absolute;
   top: 0;
@@ -35,7 +40,7 @@
   height: 100%;
 }
 
-/* Блок с текстовой информацией */
+/* Контейнер с текстом */
 .info {
   flex: 1;
   padding: 8px 12px;
@@ -49,11 +54,11 @@
   color: var(--tg-theme-text-color);
   margin-bottom: 4px;
   line-height: 1.2;
-  height: 32px; /* фиксируем высоту, чтобы названия не “ломали” сетку */
+  height: 34px; /* две строки по ~17px */
   overflow: hidden;
 }
 
-/* Цена товара */
+/* Цена */
 .price {
   font-size: 13px;
   font-weight: bold;
@@ -61,16 +66,16 @@
   margin-bottom: 4px;
 }
 
-/* Описание (короткое) */
+/* Короткое описание */
 .description {
   font-size: 12px;
   color: var(--tg-theme-hint-color);
   margin-bottom: 8px;
-  flex: 1; /* чтобы описание заполняло “свободное” место и вытягивало карточки одинаково */
+  flex: 1; /* чтобы описание занимало свободное место */
   overflow: hidden;
 }
 
-/* Кнопка, ведущая в чат с продавцом */
+/* Кнопка «Написать продавцу» */
 .button {
   display: block;
   text-align: center;
@@ -80,7 +85,7 @@
   padding: 6px 8px;
   border-radius: 4px;
   font-size: 13px;
-  margin: 0 12px 12px; /* отступы: по бокам и снизу */
+  margin: 0 12px 12px;
   transition: background-color 0.2s;
 }
 

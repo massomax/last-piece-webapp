@@ -5,16 +5,13 @@ import ProductGrid from "./components/ProductGrid";
 import Footer from "./components/Footer";
 import { type TelegramUser, type Product } from "./types";
 import { mockProducts } from "./mocks";
-import styles from "./App.module.css"; // Дополнительные стили, если потребуются
+import styles from "./App.module.css";
 
 const App: React.FC = () => {
-  // Данные о Telegram-пользователе
   const [tgUser, setTgUser] = useState<TelegramUser | null>(null);
-  // Список товаров
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    // Инициализируем WebApp
     if (window.Telegram && window.Telegram.WebApp) {
       window.Telegram.WebApp.ready();
       window.Telegram.WebApp.hideMenuButton();
@@ -29,7 +26,6 @@ const App: React.FC = () => {
         });
       }
     }
-    // Подгружаем товары (пока из мока)
     setProducts(mockProducts);
   }, []);
 

@@ -1,18 +1,31 @@
 /* src/components/ProductGrid.module.css */
 
-/* Контейнер для всей сетки товаров */
+/*
+  Наш контейнер-«сетка» внутри App:
+  добавляем сверху отступ, чтобы не прилипать к Header
+*/
 .gridContainer {
-  flex: 1; /* чтобы тянулся на всю доступную высоту, если нужно */
+  flex: 1; /* тянемся по высоте родителя App */
   display: grid;
-  /* Две колонки на мобильных, три — на планшетах, четыре — на десктопах, например */
+
+  /* 
+    Авто-подбор колонок: min ширина 140px, max = 1fr 
+    Меняет число колонок в зависимости от доступного места 
+  */
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 12px;
-  padding: 12px 8px;
-  overflow-y: auto; /* если карточек много — появляется скролл */
+
+  /* Отступ сверху, чтобы отойти от Header */
+  margin-top: 12px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 80px; /* чтобы было пространство под Footer */
+
   background-color: var(--tg-theme-bg-color);
+  overflow-y: auto;
 }
 
-/* Скрываем скроллбар в WebKit-браузерах (опционально) */
+/* Скрываем полосу прокрутки (WebKit) */
 .gridContainer::-webkit-scrollbar {
   width: 6px;
 }
