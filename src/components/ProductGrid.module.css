@@ -1,0 +1,23 @@
+/* src/components/ProductGrid.module.css */
+
+/* Контейнер для всей сетки товаров */
+.gridContainer {
+  flex: 1; /* чтобы тянулся на всю доступную высоту, если нужно */
+  display: grid;
+  /* Две колонки на мобильных, три — на планшетах, четыре — на десктопах, например */
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  padding: 12px 8px;
+  overflow-y: auto; /* если карточек много — появляется скролл */
+  background-color: var(--tg-theme-bg-color);
+}
+
+/* Скрываем скроллбар в WebKit-браузерах (опционально) */
+.gridContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.gridContainer::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}

@@ -1,0 +1,51 @@
+/* src/components/Header.module.css */
+
+/* Фон самого хедера */
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background-color: var(--tg-theme-secondary-bg-color);
+  /* можно добавить небольшой box-shadow, если нужно */
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); */
+}
+
+/* Левая часть: логотип + приветствие */
+.titleSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 20px;
+  color: var(--tg-theme-text-color);
+}
+
+.greeting {
+  font-size: 14px;
+  color: var(--tg-theme-hint-color);
+  margin-top: 4px;
+}
+
+/* Правая часть: две кнопки */
+.buttonsSection {
+  display: flex;
+  gap: 8px;
+}
+
+/* Сам стиль кнопок «Категории» и «Фильтры» */
+.navButton {
+  background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.navButton:hover {
+  background-color: var(--tg-theme-button-color-hover, #005f99);
+}

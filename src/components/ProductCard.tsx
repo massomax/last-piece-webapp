@@ -1,76 +1,38 @@
 // src/components/ProductCard.tsx
-
 import React from "react";
+import styles from "./ProductCard.module.css";
 import { type Product } from "../types";
 
-/**
- * Компонент, который получает один объект Product и рендерит карточку.
- */
 interface ProductCardProps {
   product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <div
-      style={{
-        border: "1px solid #DDD",
-        borderRadius: 8,
-        padding: 12,
-        maxWidth: 200,
-        margin: 8,
-      }}>
-      {/* Изображение товара */}
-      <img
-        src={product.imageUrl}
-        alt={product.title}
-        style={{
-          width: "100%",
-          borderRadius: 4,
-          objectFit: "cover",
-        }}
-      />
+    <div className={styles.card}>
+      {/* Блок с изображением */}
+      <div className={styles.imageWrapper}>
+        <img
+          src={product.imageUrl}
+          alt={product.title}
+          className={styles.image}
+        />
+      </div>
 
-      {/* Название */}
-      <h3
-        style={{
-          fontSize: 16,
-          margin: "8px 0 4px",
-          height: 40,
-          overflow: "hidden",
-        }}>
-        {product.title}
-      </h3>
+      {/* Информация о товаре */}
+      <div className={styles.info}>
+        <h3 className={styles.title}>{product.title}</h3>
+        <p className={styles.price}>₽{product.price.toLocaleString()}</p>
+        <p className={styles.description}>{product.description}</p>
+      </div>
 
-      {/* Цена */}
-      <p
-        style={{
-          fontWeight: "bold",
-          margin: "0 0 4px",
-        }}>
-        ₽{product.price.toLocaleString()}
-      </p>
-
-      {/* Юзернейм продавца */}
-      <p style={{ margin: "0 0 8px", fontSize: 12, color: "#555" }}>
-        @{product.sellerUsername}
-      </p>
-
-      {/* Кнопка «Перейти к чату» */}
+      {/* Кнопка «Написать продавцу» */}
       <a
         href={`https://t.me/${product.sellerUsername}`}
         target="_blank"
         rel="noreferrer"
-        style={{
-          display: "inline-block",
-          background: "#0088cc",
-          color: "#FFF",
-          textDecoration: "none",
-          borderRadius: 4,
-          padding: "6px 12px",
-          fontSize: 14,
-        }}>
-        Написать
+        className={styles.button}>
+        Написать продавцу
       </a>
     </div>
   );

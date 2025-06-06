@@ -1,0 +1,26 @@
+/* src/index.css */
+
+/* Простой CSS-reset (можете заменить на свою версию) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Телеграм-переменные (импортируются автоматически в WebApp) */
+:root {
+  --tg-theme-bg-color: var(--tg-theme-bg-color);
+  --tg-theme-text-color: var(--tg-theme-text-color);
+  --tg-theme-hint-color: var(--tg-theme-hint-color);
+  --tg-theme-link-color: var(--tg-theme-link-color);
+  --tg-theme-secondary-bg-color: var(--tg-theme-secondary-bg-color);
+  --tg-theme-button-color: var(--tg-theme-button-color);
+  --tg-theme-button-text-color: var(--tg-theme-button-text-color);
+}
+
+body {
+  background-color: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
